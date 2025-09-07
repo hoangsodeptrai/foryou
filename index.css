@@ -1,0 +1,48 @@
+body {
+	background-color: pink;
+}
+#jumpBtn {
+	position: absolute; /* Cho phép nút di chuyển */
+	top: 267px;
+	left: 730px;
+	padding: 10px 20px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease; /* Mượt mà khi di chuyển */
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 200px;
+}
+.wallper {
+	width: 100%px;
+}
+.yes-button {
+	background: rgb(245, 151, 167);
+	padding: 10px 20px;
+	margin-right: 10px;
+	border: none;
+	margin-left: 70px;
+	border-radius: 5px;
+}
+.flying-img img {
+	width: 100px; /* Kích thước hợp lý, không quá to */
+	height: 150px;
+	border-radius: 12px; /* Bo góc nhẹ, nhìn mềm mại hơn */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bóng nhẹ tạo chiều sâu */
+	object-fit: cover; /* Ảnh không bị méo */
+	filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3)); /* Bóng đổ đẹp hơn */
+	transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover (nếu muốn) */
+.flying-img img:hover {
+	transform: scale(1.1) rotate(5deg); /* Phóng to nhẹ + xoay */
+	filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+	cursor: pointer;
+}

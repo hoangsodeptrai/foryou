@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="index.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>For You</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="wallper">
+				<h2 style="margin-left: 12px">Liệu em có thích không</h2>
+				<h3 id="resultMsg" style="display: none; color: rgb(214, 90, 90); margin-top: 20px">Quyết định cuối cùng của em nè</h3>
+				<button class="yes-button"  onclick="window.location.href='yes.html'" style="background: rgb(245, 151, 167)">Yes</button>
+				<button id="jumpBtn">Khum</button>
+			</div>
+		</div>
+	</body>
+	<script>
+		const button = document.getElementById("jumpBtn");
+		const heading = document.querySelector(".wallper h2");
+		const resultMsg = document.getElementById("resultMsg"); // lấy thẻ h3
+
+		const messages = [
+			"Ơ kìa, đừng từ chối mà 😢",
+			"Thử nghĩ lại xem 🥺",
+			"Vậy mà vẫn từ chối à ...",
+			"Đừng nhấn nữa... tui buồn đó 😔",
+			"Huhu, bấm 'Yes' đi mà 😭",
+			"Thôi đừng trốn nữa ",
+			"Anh tặng em mà 😚",
+		];
+		let index = 0;
+		button.addEventListener("click", () => {
+			if (index < messages.length) {
+				heading.textContent = messages[index];
+				index++; // Tăng chỉ số
+			}
+			if (index === messages.length) {
+				button.style.display = "none";
+				resultMsg.style.display = "block";
+			}
+
+			// Tạo vị trí ngẫu nhiên trong cửa sổ trình duyệt
+			const randomTop = Math.floor(Math.random() * (window.innerHeight - 50));
+			const randomLeft = Math.floor(Math.random() * (window.innerWidth - 100));
+			heading.textContent = messages[index];
+
+			button.style.top = `${randomTop}px`;
+			button.style.left = `${randomLeft}px`;
+		});
+	</script>
+</html>
